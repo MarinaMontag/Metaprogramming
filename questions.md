@@ -1707,6 +1707,8 @@ d) assert
 > Explanation: The statements in the finally block will always be executed, whether an exception is thrown or not. This clause is used to close the resources used in a code.
 
 # Section 4
+	
+# Boolean
 
 ## 1. What will be the output of the following Python code snippet? [Який буде вивід наступного коду]
 
@@ -1771,6 +1773,543 @@ d)\
  False
 
 > Explanation: The function not returns true if the argument amounts to false, and false if the argument amounts to true. Hence the first function returns false, and the second function returns false.
+	
+## 4. What will be the output of the following Python code?
+	
+```python
+['f', 't'][bool('spam')]
+```
+
+**a) t**
+	
+b) f
+	
+c) No output
+	
+d) Error
+	
+> Explanation: The line of code can be translated to state that ‘f’ is printed if the argument passed to the Boolean function amount to zero. Else ‘t’ is printed. The argument given to the Boolean function in the above case is ‘spam’, which does not amount to zero. Hence the output is t.
+	
+## 5. What will be the output of the following Python code?
+	
+```python
+l=[1, 0, 2, 0, 'hello', '', []]
+list(filter(bool, l))
+```
+
+a) Error
+	
+b) [1, 0, 2, 0, ‘hello’, ”, []]
+	
+c) [1, 0, 2, ‘hello’, ”, []]
+	
+**d) [1, 2, ‘hello’]**
+	
+> Explanation: The code shown above returns a new list containing only those elements of the list l which do not amount to zero. Hence the output is: [1, 2, ‘hello’].
+
+## 6. What will be the output of the following Python code if the system date is 21st June, 2017 (Wednesday)?	
+	
+```python
+[] or {}
+{} or []
+```
+
+a)\
+ []\
+ {}
+
+b)\
+ []\
+ []
+	
+**c)**\
+ **{}**\
+ **[]**
+
+d)\
+ {}\
+ {}
+	
+> Explanation: The code shown above shows two functions. In both the cases the right operand is returned. This is because each function is evaluated from left to right. Since the left operand is false, it is assumed that the right operand must be true and hence the right operand is returned in each of the above case.
+	
+## 7. What will be the output of the following Python code?
+
+```python
+class Truth:
+	pass
+x=Truth()
+bool(x)
+```
+	
+a) pass
+	
+**b) true**
+	
+c) false
+	
+d) error
+	
+> Explanation: If the truth method is not defined, the object is considered true. Hence the output of the code shown above is true.
+	
+## 8. What will be the output of the following Python code?
+	
+```python
+if (9 < 0) and (0 < -9):
+    print("hello")
+elif (9 > 0) or False:
+    print("good")
+else:
+    print("bad")
+```
+
+a) error
+	
+b) hello
+	
+**c) good**
+	
+d) bad
+
+> Explanation: The code shown above prints the appropriate option depending on the conditions given. The condition which matches is (9>0), and hence the output is: good.
+	
+## 9. Which of the following Boolean expressions is not logically equivalent to the other three?
+
+a) not(-6<0 or-6>10)
+	
+b) -6>=0 and -6<=10
+		   
+c) not(-6<10 or-6==10)
+	
+**d) not(-6>10 or-6==10)**
+
+> Explanation: The expression not(-6<0 or -6>10) returns the output False.
+The expression -6>=0 and -6<=10 returns the output False.
+The expression not(-6<10 or -6==10) returns the output False.
+The expression not(-6>10 or -6==10) returns the output True.
+	
+## 10. What will be the output of the following Python code snippet?
+	
+```python
+not(10<20) and not(10>30)
+```
+	
+a) True
+	
+**b) False**
+	
+c) Error
+	
+d) No output
+	
+> Explanation: The expression not(10<20) returns false. The expression not(10>30) returns true. The and operation between false and true returns false. Hence the output is false.
+	
+# Formatting – 1
+	
+## 1. What will be the output of the following Python code snippet?
+	
+```python
+X=”hi”
+print(“05d”%X)
+```
+
+a) 00000hi
+	
+b) 000hi
+	
+c) hi000
+	
+**d) error**
+	
+> Explanation: The code snippet shown above results in an error because the above formatting option works only if ‘X’ is a number. Since in the above case ‘X’ is a string, an error is thrown.
+	
+## 2. What will be the output of the following Python code snippet?
+	
+```python
+X=”san-foundry”
+print(“%56s”,X)
+```
+
+**a) 56 blank spaces before san-foundry**
+	
+b) 56 blank spaces before san and foundry
+	
+c) 56 blank spaces after san-foundry
+	
+d) no change
+	
+> Explanation: The formatting option print(“%Ns”,X) helps us add ‘N’ number of spaces before a given string ‘X’. Hence the output for the code snippet shown above will be 56 blank spaces before the string “san-foundry”.
+	
+## 3. What will be the output of the following Python expression if x=456?
+	
+```python
+print("%-06d"%x)
+```
+	
+a) 000456
+	
+b) 456000
+	
+**c) 456**
+	
+d) error
+	
+> Explanation: The expression shown above results in the output 456.
+	
+## 4. What will be the output of the following Python expression if X=345?
+
+```python
+print(“%06d”%X)
+```
+	
+a) 345000
+	
+**b) 000345**
+	
+c) 000000345
+	
+d) 345000000
+	
+> Explanation: The above expression returns the output 000345. It adds the required number of zeroes before the given number in order to make the number of digits 6 (as specified in this case).
+	
+## 5. Which of the following formatting options can be used in order to add ‘n’ blank spaces after a given string ‘S’?
+
+a) print(“-ns”%S)
+	
+b) print(“-ns”%S)
+	
+c) print(“%ns”%S)
+	
+**d) print(“%-ns”%S)**
+	
+> Explanation: In order to add ‘n’ blank spaces after a given string ‘S’, we use the formatting option:(“%-ns”%S).
+	
+## 6. What will be the output of the following Python expression if X = -122?
+
+```python
+print("-%06d"%x)
+```
+
+a) -000122
+	
+b) 000122
+	
+**c) –00122**
+	
+d) -00122
+	
+> Explanation: The given number is -122. Here the total number of digits (including the negative sign) should be 6 according to the expression. In addition to this, there is a negative sign in the given expression. Hence the output will be – -00122.
+	
+## 7. What will be the output of the following Python expression if the value of x is 34?
+	
+```python
+print(“%f”%x)
+```
+	
+a) 34.00
+	
+b) 34.0000
+	
+**c) 34.000000**
+	
+d) 34.00000000
+	
+> Explanation: The expression shown above normally returns the value with 6 decimal points if it is not specified with any number. Hence the output of this expression will be: 34.000000 (6 decimal points).
+	
+## 8. What will be the output of the following Python expression if x=56.236?
+
+```python
+print("%.2f"%x)
+```
+	
+a) 56.00
+	
+**b) 56.24**
+	
+c) 56.23
+	
+d) 0056.236
+	
+> Explanation: The expression shown above rounds off the given number to the number of decimal places specified. Since the expression given specifies rounding off to two decimal places, the output of this expression will be 56.24. Had the value been x=56.234 (last digit being any number less than 5), the output would have been 56.23.
+	
+## 9. What will be the output of the following Python expression if x=22.19?
+	
+```python
+print("%5.2f"%x)
+```
+	
+a) 22.1900
+	
+b) 22.00000
+	
+**c) 22.19**
+	
+d) 22.20
+	
+> Explanation: The output of the expression above will be 22.19. This expression specifies that the total number of digits (including the decimal point) should be 5, rounded off to two decimal places.
+	
+## 10. The expression shown below results in an error.
+	
+```python
+print("-%5d0",989)
+```
+	
+a) True
+	
+**b) False**
+	
+> Explanation: The expression shown above does not result in an error. The output of this expression is -%5d0 989. Hence this statement is incorrect.
+	
+# Formatting – 2
+	
+## 1. What will be the output of the following Python code snippet?
+	
+```python
+'%d %s %g you' %(1, 'hello', 4.0)
+```
+	
+a) Error
+	
+b) 1 hello you 4.0
+	
+**c) 1 hello 4 you**
+	
+d) 1 4 hello you
+	
+> Explanation: In the snippet of code shown above, three values are inserted into the target string. When we insert more than one value, we should group the values on the right in a tuple. The % formatting expression operator expects either a single item or a tuple of one or more items on its right side.
+	
+## 2. The output of which of the codes shown below will be: “There are 4 blue birds.”?
+	
+a) ‘There are %g %d birds.’ %4 %blue
+	
+**b) ‘There are %d %s birds.’ %(4, blue)**
+	
+c) ‘There are %s %d birds.’ %[4, blue]
+	
+d) ‘There are %d %s birds.’ 4, blue
+	
+> Explanation: The code ‘There are %d %s birds.’ %(4, blue) results in the output: There are 4 blue birds. When we insert more than one value, we should group the values on the right in a tuple.
+	
+## 3. What will be the output of the python code shown below for various styles of format specifiers?
+	
+```python
+x=1234
+res='integers:...%d...%-6d...%06d' %(x, x, x)
+res
+```
+	
+**a) ‘integers:…1234…1234  …001234’**
+	
+b) ‘integers…1234…1234…123400’
+	
+c) ‘integers:… 1234…1234…001234’
+	
+d) ‘integers:…1234…1234…001234’
+	
+> Explanation: The code shown above prints 1234 for the format specified %d, ‘1234  ’ for the format specifier %-6d (minus ‘-‘ sign signifies left justification), and 001234 for the format specifier %06d. Hence the output of this code is: ‘integers:…1234…1234  …001234’
+	
+## 4. What will be the output of the following Python code snippet?
+	
+```python
+x=3.3456789
+'%f | %e | %g' %(x, x, x)
+```
+
+a) Error
+	
+b) ‘3.3456789 | 3.3456789+00 | 3.345678’
+	
+c) ‘3.345678 | 3.345678e+0 | 3.345678’
+	
+**d) ‘3.345679 | 3.345679e+00 | 3.34568’**
+	
+> Explanation: The %f %e and %g format specifiers represent floating point numbers in different ways. %e and %E are the same, except that the exponent is in lowercase. %g chooses the format by number content. Hence the output of this code is: ‘3.345679 | 3.345679e+00 | 3.34568’.
+	
+## 5. What will be the output of the following Python code snippet?
+	
+```python
+x=3.3456789
+'%-6.2f | %05.2f | %+06.1f' %(x, x, x)
+```
+	
+**a) ‘3.35 | 03.35 | +003.3’**
+	
+b) ‘3.3456789 | 03.3456789 | +03.3456789’
+	
+c) Error
+	
+d) ‘3.34 | 03.34 | 03.34+’
+	
+> Explanation: The code shown above rounds the floating point value to two decimal places. In this code, a variety of addition formatting features such as zero padding, total field width etc. Hence the output of this code is: ‘3.35(two spaces) | 03.35 | +003.3’.
+	
+## 6. What will be the output of the following Python code snippet?
+	
+```python
+x=3.3456789
+'%s' %x, str(x)
+```
+	
+a) Error
+	
+**b) (‘3.3456789’, ‘3.3456789’)**
+	
+c) (3.3456789, 3.3456789)
+	
+d) (‘3.3456789’, 3.3456789)
+	
+> Explanation: We can simply convert strings with a %s format expression or the str built-in function. Both of these methods have been shown in this code. Hence the output is: (‘3.3456789’, ‘3.3456789’)
+	
+## 7. What will be the output of the following Python code snippet?
+
+```python
+'%(qty)d more %(food)s' %{'qty':1, 'food': 'spam'}
+```
+	
+a) Error
+	
+b) No output
+	
+c) ‘1 more foods’
+	
+**d) ‘1 more spam’**
+	
+> Explanation: String formatting also allows conversion targets on the left to refer to the keys in a dictionary coded on the right and fetch the corresponding values. In the code shown above, (qty) and (food) in the format string on the left refers to keys in the dictionary literal on the right and fetch their assorted values. Hence the output of the code shown above is: 1 more spam.
+	
+## 8. What will be the output of the following Python code snippet?
+	
+```python
+a='hello'
+q=10
+vars()
+```
+	
+**a) {‘a’ : ‘hello’, ‘q’ : 10, ……..plus built-in names set by Python….}**
+	
+b) {……Built in names set by Python……}
+	
+c) {‘a’ : ‘hello’, ‘q’ : 10}
+	
+d) Error
+
+> Explanation: The built in function vars() returns a dictionary containing all the variables that exist in the place. Hence the output of the code shown above is: {‘a’ : ‘hello’, ‘q’ : 10, ……..plus built-in names set by Python….}
+	
+## 9. What will be the output of the following Python code?
+	
+```python
+s='{0}, {1}, and {2}'
+s.format('hello', 'good', 'morning')
+```
+	
+a) ‘hello good and morning’
+	
+b) ‘hello, good, morning’
+	
+**c) ‘hello, good, and morning’**
+	
+d) Error
+	
+> Explanation: Within the subject string, curly braces designate substitution targets and arguments to be inserted either by position or keyword. Hence the output of the code shown above:’hello, good,and morning’.
+	
+## 10. What will be the output of the following Python code?
+	
+```python
+s='%s, %s & %s'
+s%('mumbai', 'kolkata', 'delhi')
+```
+	
+a) mumbai kolkata & delhi
+	
+b) Error
+	
+c) No output
+	
+**d) ‘mumbai, kolkata & delhi’**
+	
+> Explanation: In the code shown above, the format specifier %s is replaced by the designated substitution. Hence the output of the code shown above is: ‘mumbai, kolkata & delhi’.
+	
+## 11. What will be the output of the following Python code?
+	
+```python
+t = '%(a)s, %(b)s, %(c)s'
+t % dict(a='hello', b='world', c='universe')
+```
+	
+**a) ‘hello, world, universe’**
+	
+b) ‘hellos, worlds, universes’
+	
+c) Error
+	
+d) hellos, world, universe
+	
+> Explanation: Within the subject string, curly braces represent substitution targets and arguments to be inserted. Hence the output of the code shown above:
+‘hello, world, universe’.
+	
+## 12. What will be the output of the following Python code?
+	
+```python
+'{a}, {0}, {abc}'.format(10, a=2.5, abc=[1, 2])
+```
+	
+a) Error
+	
+**b) ‘2.5, 10, [1, 2]’**
+	
+c) 2.5, 10, 1, 2
+	
+d) ’10, 2.5, [1, 2]’
+	
+> Explanation: Since we have specified that the order of the output be: {a}, {0}, {abc}, hence the value of associated with {a} is printed first followed by that of {0} and {abc}. Hence the output of the code shown above is: ‘2.5, 10, [1, 2]’.
+	
+## 13. What will be the output of the following Python code?
+	
+```python
+'{0:.2f}'.format(1.234)
+```
+	
+a) ‘1’
+	
+b) ‘1.234’
+	
+**c) ‘1.23’**
+	
+d) ‘1.2’
+	
+> Explanation: The code shown above displays the string method to round off a given decimal number to two decimal places. Hence the output of the code is: ‘1.23’.
+	
+## 14. What will be the output of the following Python code?
+
+```python
+'%x %d' %(255, 255)
+```
+	
+**a) ‘ff, 255’**
+	
+b) ‘255, 255’
+	
+c) ‘15f, 15f’
+	
+d) Error
+	
+> Explanation: The code shown above converts the given arguments to hexadecimal and decimal values and prints the result. This is done using the format specifiers %x and %d respectively. Hence the output of the code shown above is: ‘ff, 255’.
+	
+## 15. The output of the two codes shown below is the same.
+
+```python
+i. '{0:.2f}'.format(1/3.0)
+ii. '%.2f'%(1/3.0)
+```
+	
+**a) True**
+	
+b) False
+	
+> Explanation: The two codes shown above represent the same operation but in different formats. The output of both of these functions is: ‘0.33’. Hence the statement is true.
+	
+# Advanced Formatting Tools
+	
+## 1. What will be the output of the following Python code?
+	
+
 	
 # Section 5
 
