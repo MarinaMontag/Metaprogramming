@@ -2309,8 +2309,195 @@ b) False
 	
 ## 1. What will be the output of the following Python code?
 	
-
+```python
+l=list('HELLO')
+'first={0[0]}, third={0[2]}'.format(l)
+```
 	
+**a) ‘first=H, third=L’**
+	
+b) ‘first=0, third=2’
+	
+c) Error
+	
+d) ‘first=0, third=L’
+	
+> Explanation: In the code shown above, the value for first is substituted by l[0], that is H and the value for third is substituted by l[2], that is L. Hence the output of the code shown above is: ‘first=H, third=L’. The list l= [‘H’, ‘E’, ‘L’, ‘L’, ‘O’].
+	
+## 2. What will be the output of the following Python code?
+	
+```python
+l=list('HELLO')
+p=l[0], l[-1], l[1:3]
+'a={0}, b={1}, c={2}'.format(*p)
+```
+	
+a) Error
+	
+b) “a=’H’, b=’O’, c=(E, L)”
+	
+**c) “a=H, b=O, c=[‘E’, ‘L’]”**
+	
+d) Junk value
+	
+> Explanation: In the code shown above, the value for a is substituted by l[0], that is ‘H’, the value of b is substituted by l[-1], that is ‘O’ and the value for c is substituted by l[1:3]. Here the use of *p is to unpack a tuple items into individual function arguments.
+	
+## 3. The formatting method {1:<10} represents the ___________ positional argument, _________ justified in a 10 character wide field.
+				
+a) first, right
+				    
+**b) second, left**
+				    
+c) first, left
+				    
+d) second, right
+				    
+Explanation: The formatting method {1:<10} represents the second positional argument, left justified in a 10 character wide field.
+
+## 4. What will be the output of the following Python code?
+	
+```python
+hex(255), int('FF', 16), 0xFF
+```
+
+a) [0xFF, 255, 16, 255]
+	
+b) (‘0xff’, 155, 16, 255)
+	
+c) Error
+	
+**d) (‘0xff’, 255, 255)**
+	
+> Explanation: The code shown above converts the value 255 into hexadecimal, that is, 0xff. The value ‘FF’ into integer. Hence the output of the code shown is: (‘0xff’, 255, 255).
+	
+## 5. The output of the two codes shown below is the same.
+	
+```python
+i. bin((2**16)-1)
+ii. '{}'.format(bin((2**16)-1))
+```
+	
+**a) True**
+	
+b) False
+	
+> Explanation: The output of both of the codes shown above is ‘0b1111111111111111’. Hence the statement is true.
+	
+## 6. What will be the output of the following Python code?
+	
+```python
+'{a}{b}{a}'.format(a='hello', b='world')
+```
+	
+a) ‘hello world’
+	
+b) ‘hello’ ‘world’ ‘hello’
+	
+**c) ‘helloworldhello’**
+	
+d) ‘hello’ ‘hello’ ‘world’
+	
+> Explanation: The code shown above prints the values substituted for a, b, a, in the same order. This operation is performed using the format function. Hence the output of the code is: ‘helloworldhello’.
+	
+## 7. What will be the output of the following Python code?
+	
+```python
+D=dict(p='san', q='foundry')
+'{p}{q}'.format(**D)
+```
+	
+a) Error
+	
+**b) sanfoundry**
+	
+c) san foundry
+	
+d) {‘san’, ‘foundry’}
+	
+> Explanation: The code shown above prints the values substituted for p and q in the same order. Note that there is no blank space between p and q. Hence the output is: sanfoundry.
+	
+## 8. What will be the output of the following Python code?
+	
+```python
+'The {} side {1} {2}'.format('bright', 'of', 'life')
+```
+	
+**a) Error**
+	
+b) ‘The bright side of life’
+	
+c) ‘The {bright} side {of} {life}’
+	
+d) No output
+	
+> Explanation: The code shown above results in an error. This is because we have switched from automatic field numbering to manual field numbering, that is, from {} to {1}. Hence this code results in an error.
+	
+## 9. What will be the output of the following Python code?
+	
+```python
+'{0:f}, {1:2f}, {2:05.2f}'.format(1.23456, 1.23456, 1.23456)
+```
+	
+a) Error
+	
+b) ‘1.234560, 1.22345, 1.23’
+	
+c) No output
+	
+**d) ‘1.234560, 1.234560, 01.23’**
+	
+> Explanation: In the code shown above, various formatting options are displayed using the format option. Hence the output of this code is: ‘1.234560, 1.234560, 01.23’
+	
+## 10. What will be the output of the following Python code?
+
+```python
+'%.2f%s' % (1.2345, 99)
+```
+	
+a) ‘1.2345’, ‘99’
+	
+**b) ‘1.2399’**
+	
+c) ‘1.234599’
+	
+d) 1.23, 99
+	
+> Explanation: In this code, we must notice that since multiple values haven been given, they should be enclosed in a tuple. Since the formatting format is %.2f, the value 1.2345 is reduced to two decimal places. Hence the output of the code shown above: ‘1.2399’.
+	
+## 11. What will be the output of the following Python code?
+	
+```python
+'%s' %((1.23,),)
+```
+	
+**a) ‘(1.23,)’**
+	
+b) 1.23,
+	
+c) (,1.23)
+	
+d) ‘1.23’
+	
+> Explanation: The formatting expression accepts either a single substitution value, or a tuple of one or more items. Since single item can be given either by itself or within the tuple, a tuple to be formatted must be provided as a tested tuple. Hence the output of the code is: >>> ‘%s’ %((1.23,),).
+	
+## 12. What will be the output of the following two codes?
+	
+```python
+i. '{0}'.format(4.56)
+ii. '{0}'.format([4.56,])
+```
+	
+a) ‘4.56’, ‘4.56,’
+	
+**b) ‘4.56’, ‘[4.56]’**
+	
+c) 4.56, [4.56,]
+	
+d) 4.56, [4.56,]
+	
+> Explanation: The code shown above shows the formatting option on the same value, that is 4.56, where in the second case, the value is enclosed in a list. Hence the output of the code shown above is:
+‘4.56’, ‘[4.56]’
+		
 # Section 5
 
 ## What will be the output of the following Python code? [Який буде вивід наступного коду]
