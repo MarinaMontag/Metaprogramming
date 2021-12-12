@@ -1708,6 +1708,70 @@ d) assert
 
 # Section 4
 
+## 1. What will be the output of the following Python code snippet? [Який буде вивід наступного коду]
+
+```python
+bool(‘False’)
+bool()
+```
+a)\
+ True\
+ True
+
+b)\
+ False\
+ True
+
+c)\
+ False\
+ False
+
+**d)**\
+ **True**\
+ **False**
+
+> Explanation: The Boolean function returns true if the argument passed to the bool function does not amount to zero. In the first example, the string ‘False’ is passed to the function bool. This does not amount to zero and hence the output is true. In the second function, an empty list is passed to the function bool. Hence the output is false.
+
+## 2. What will be the output of the following Python code snippet?
+
+```python
+['hello', 'morning'][bool('')]
+```
+	
+a) error
+	
+b) no output
+	
+**c) hello**
+	
+d) morning
+	
+> Explanation: The line of code shown above can be simplified to state that ‘hello’ should be printed if the argument passed to the Boolean function amounts to zero, else ‘morning’ will be printed.
+	
+## 3.  What will be the output of the following Python code snippet?
+	
+```python
+not(3>4)
+not(1&1)
+```
+a)\
+ True\
+ True
+
+**b)**\
+ **True**\
+ **False**
+
+c)\
+ False\
+ True
+
+d)\
+ False\
+ False
+
+> Explanation: The function not returns true if the argument amounts to false, and false if the argument amounts to true. Hence the first function returns false, and the second function returns false.
+	
 # Section 5
 
 ## What will be the output of the following Python code? [Який буде вивід наступного коду]
